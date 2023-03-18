@@ -76,6 +76,28 @@ A continuación, se crea una malla de puntos en el rango de -5.12 a 5.12 para la
 
 Finalmente, se muestra la figura con las gráficas utilizando la función plt.show().
 
+### 2.7. **Definición la optimización por metodo evolución diferencia para la función de Rastrigin en dos dimensiones**
+La función de objetivo a minimizar se define en el código a través de la función "obj" que se pasa como parámetro en la función "differential_evolution".
+
+El algoritmo Evolución Diferencial utiliza una población de vectores, cada uno de los cuales representa una posible solución. En cada iteración, el algoritmo selecciona tres vectores aleatorios de la población y realiza una operación de mutación para generar un nuevo vector de prueba. A continuación, se realiza una operación de cruce entre el vector de prueba y un vector objetivo seleccionado al azar. Si el vector de prueba es mejor que el vector objetivo, el vector objetivo se reemplaza por el vector de prueba en la población. Este proceso se repite durante varias iteraciones hasta que se alcanza un criterio de parada, que suele ser un número máximo de iteraciones o una tolerancia en la mejora de la función objetivo.
+
+El código implementa varias funciones auxiliares que se utilizan en el algoritmo DE, incluyendo una función de mutación, una función de cruce, una función de selección, una función de comprobación de límites y una función para generar la población inicial aleatoria.
+
+La función "differential_evolution" es la función principal del algoritmo y toma como parámetros el tamaño de la población, los límites de las variables de la función objetivo, el número máximo de iteraciones, el factor de escala F y la tasa de cruce cr. Retorna una lista que contiene el mejor vector encontrado, el valor de la función objetivo en ese vector, una lista que contiene los valores de la función objetivo en cada iteración y una lista que contiene los mejores vectores encontrados en cada iteración.
+
+Ahora implementamos la optimización de la función de Rosenbrock en dos dimensiones utilizando el algoritmo de diferencias evolutivas (DE). Primero, se define el tamaño de la población (pop_size), los límites inferior y superior para cada dimensión (bounds), el número de iteraciones (iter), el factor de escala para la mutación (F) y la tasa de recombinación cruzada (cr). Luego, se llama a la función differential_evolution() con estos parámetros, junto con la función de Rosenbrock en dos dimensiones (rosen2) como la función objetivo.
+
+Después de ejecutar el algoritmo DE, se crea una malla de puntos en el rango de -5.12 a 5.12 para evaluar la función de Rosenbrock en dos dimensiones y se dibuja su contorno en un plano bidimensional. Luego, se extraen las coordenadas x e y de la mejor solución encontrada (solution[3]) y se dibuja una línea roja que conecta estos puntos en el plano del contorno. Finalmente, se muestra el gráfico con la mejor solución encontrada en rojo y las curvas de contorno de la función objetivo de Rosenbrock en el fondo.
+
+### 2.8. **Definición la optimización por metodo evolución diferencia para la función de Rastrigin en tres dimensiones**
+Para optimizar la ecuaciones de Rosenbrock en tres dimensiones con evolución diferencial. Primero se definen los parámetros necesarios para ejecutar el algoritmo, incluyendo el tamaño de la población, los límites inferior y superior de cada dimensión, el número de iteraciones, el factor de escala para la mutación y la tasa de cruce para la recombinación.
+
+Luego, se llama a la función differential_evolution con estos parámetros y la función objetivo rosen3, que es la versión tridimensional de la función de Rosenbrock. La función devuelve una tupla que contiene la mejor solución encontrada, el valor de la función objetivo para esa solución, el número de evaluaciones de la función objetivo realizadas y una lista de todas las soluciones generadas durante la búsqueda.
+
+A continuación, se crea una malla de puntos en el rango de -5.12 a 5.12 para las dimensiones x e y, y se evalúa la función objetivo en cada punto de la malla para crear una superficie tridimensional. Luego, se extraen las coordenadas x, y, y z de la mejor solución encontrada y se plotea esta solución en rojo en la superficie tridimensional.
+
+Finalmente, se muestra la figura con las gráficas utilizando la función plt.show().
+
 ### 2.1. **Definición del algoritmo de hormigas**
 test
 
