@@ -94,7 +94,7 @@ Para optimizar la ecuaciones de Rosenbrock en tres dimensiones con evolución di
 
 Luego, se llama a la función differential_evolution con estos parámetros y la función objetivo rosen3, que es la versión tridimensional de la función de Rosenbrock. La función devuelve una tupla que contiene la mejor solución encontrada, el valor de la función objetivo para esa solución, el número de evaluaciones de la función objetivo realizadas y una lista de todas las soluciones generadas durante la búsqueda.
 
-A continuación, se crea una malla de puntos en el rango de -5.12 a 5.12 para las dimensiones x e y, y se evalúa la función objetivo en cada punto de la malla para crear una superficie tridimensional. Luego, se extraen las coordenadas x, y, y z de la mejor solución encontrada y se plotea esta solución en rojo en la superficie tridimensional.
+A continuación, se crea una malla de puntos en el rango de -5.12 a 5.12 para las dimensiones x e y, y se evalúa la función objetivo en cada punto de la malla para crear una superficie tridimensional. Luego, se extraen las coordenadas x, y, y z de la mejor solución encontrada y se plotea esta solución en rojo en la superficie tridimensional. 
 
 Finalmente, se muestra la figura con las gráficas utilizando la función plt.show().
 
