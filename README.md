@@ -190,8 +190,8 @@ El código es útil para encontrar el mínimo global de una función de tres var
 
 
 ## 4. **Conclusiones**
-Con respecto a la optimización de hormigas, se analizaron las posibles rutas más óptimas a partir del algoritmo de optimización de hormigas para 1 y 150 hormigas y se evidencia que la ruta óptima es la misma.
-Se encuentra que la ruta optimza es:
+Con respecto a la optimización de hormigas, se analizaron las posibles rutas más óptimas de hormigas para 1 y 150 hormigas y se evidencia que la ruta óptima es la misma.
+Se encuentra que la ruta optima es:
 ![image](gif_viajero.gif)
 En general se mostró que el algoritmo genético, puede ser mejor para optimización, dado que éste converge más rápido que los otros algoritmos, tanto en la función de Rosenbrock como en la de Rastrigin, y además se puede apreciar que el algoritmo genético converge en un mínimo global, mientras que el Gradiente puede converger a distintos locales.
 La función Rastrigin es una buena función para poder probar algoritmos de optimización y ver cuales algoritmos funcionan para llegar a un mínimo global y cuales funcionan para llegar a mínimos locales.
