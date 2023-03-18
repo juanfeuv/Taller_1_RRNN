@@ -203,7 +203,7 @@ test
 ## 4. **Conclusiones**
 Se analizaron las posibles rutas más óptimas a partir del algoritmo de optimización de hormigas para 1 y 150 hormigas y se evidencia que la ruta óptima es la misma.
 Se encuentra que la ruta optimza es:
-gif_viajero.gif
+![image](gif_viajero.gif)
 
 ## **Referencias:**
 
