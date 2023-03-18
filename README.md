@@ -197,8 +197,6 @@ En general se mostró que el algoritmo genético, puede ser mejor para optimizac
 La función Rastrigin es una buena función para poder probar algoritmos de optimización y ver cuales algoritmos funcionan para llegar a un mínimo global y cuales funcionan para llegar a mínimos locales.
 
 ## **Referencias:**
-
-planteamiento para el enfoque de los datos: https://www.cbsnews.com/news/the-biggest-problems-with-americas-colleges/
 - Peajes en Colombia: https://www.peajesencolombia.com/
 - Algoritmo de optmización de hormigas: https://github.com/Akavall/AntColonyOptimization/blob/c585c5cfc9b0e6b709322ac15fe1e2193b20d8e4/ant_colony.py
 - Consumo de carro: https://www.elcarrocolombiano.com/pruebas/mazda-cx-5-signature-a-prueba-un-suv-con-turbo-y-mucho-picante-video/#:~:text=En%20cuanto%20al%20consumo%2C%20est%C3%A1,58%20km%2Fgal%C3%B3n%20en%20carretera
