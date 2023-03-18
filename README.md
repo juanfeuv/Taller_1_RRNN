@@ -98,12 +98,14 @@ El método de descenso por gradiente se implementa mediante la función "gradien
 
 En el código se genera una visualización en 2D de la función de Rosenbrock y la trayectoria de búsqueda del algoritmo de descenso por gradiente. Primero se define la función "plot_rosenbrock_2d" que toma como entrada un arreglo de puntos que representan los valores de x e y obtenidos por el algoritmo de descenso por gradiente en cada iteración. Luego, se genera una condición inicial aleatoria en dos dimensiones y se llama a la función "gradient_descent" con los parámetros necesarios para aplicar el algoritmo de descenso por gradiente y almacenar los resultados en la variable "xs_2d". Finalmente, se llama a la función "plot_rosenbrock_2d" con la variable "xs_2d" como entrada para visualizar los resultados.
 ![image](ros2dgrad.gif)
+![image](ros3dgrad.gif)
 
 ### 2.2.4. **Definición la optimización por metodo gradiente para la función de Rosenbrock**
 En el código se genera una visualización en 2D de la función de Rastrigin y la trayectoria de búsqueda del algoritmo de descenso por gradiente. Primero se define la función "plot_rastrigin_3d" que toma como entrada un arreglo de puntos que representan los valores de x e y obtenidos por el algoritmo de descenso por gradiente en cada iteración y el valor de z obtenido de la función “rastrigin_2d”. Luego, se genera una condición inicial aleatoria en tres dimensiones y se llama a la función "gradient_descent" con los parámetros necesarios para aplicar el algoritmo de descenso por gradiente y almacenar los resultados en la variable "xs_3d".
 
 Finalmente, se llama a la función "plot_rastrigin_3d" con la variable "xs_3d" como entrada para visualizar los resultados.
 ![image](ras2dgrad.gif)
+![image](ras3dgrad.gif)
 
 ### 2.2.5. **Definición la optimización por metodo evolución diferencia para la función de Rosenbrock en dos dimensiones**
 La función de objetivo a minimizar se define en el código a través de la función "obj" que se pasa como parámetro en la función "differential_evolution".
