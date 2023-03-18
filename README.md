@@ -40,9 +40,15 @@ Para el desarrollo del objetivo planteado (optimizar las rutas) se utilizará el
 ### 2.1. **Definición de funciones Rosenbrock**
 “La función de Rosenbrock es una conocida función de prueba para problemas de optimización numérica, el cual fue inicialmente usado por De Jong para probar el desempeño de algoritmos genéticos”(Yun-Wei Shang, 2006). La implementación de la función de Rosenbrock en 2D y 3D se realiza mediante las funciones "rosenbrock_2d" (1-x)2+100*(y-x2)2 y "rosenbrock_3d" (1-x)2+100*(y-x2)2+(1-y)2+100*(z-y2)2, respectivamente. 
 
-### 2.1. **Definición de funciones Rastrigin**
+### 2.2. **Definición de funciones Rastrigin**
 La implementación de la función de Rastrigin en 2D y 3D se realiza mediante las funciones "rastrigin_2d" 10*2+(x2-10*cos(2**x))+(y2-10*cos(2**y)) y "rastrigin_3d" 10*3+(x2-10*cos(2**x))+(y2-10*cos(2**y))+ 
 (z2-10*cos(2**z)), respectivamente. La función "grad_rastrigin_2d" y "grad_rastrigin_3d" implementan el gradiente de la función de Rastrigin en 2D y 3D, respectivamente.
+
+### 2.3. **Definición la optimización por metodo gradiente**
+El método de descenso por gradiente se implementa mediante la función "gradient_descent". Este método es una técnica de optimización iterativa que se utiliza para encontrar el mínimo de una función mediante la actualización de los valores de los parámetros en la dirección opuesta del gradiente de la función. En cada iteración, se calcula el gradiente de la función en el punto actual y se actualiza el valor de los parámetros multiplicándose por la tasa de aprendizaje. El proceso se repite hasta que se alcance una tolerancia determinada o se llegue a un número máximo de iteraciones.
+
+En el código se genera una visualización en 2D de la función de Rosenbrock y la trayectoria de búsqueda del algoritmo de descenso por gradiente. Primero se define la función "plot_rosenbrock_2d" que toma como entrada un arreglo de puntos que representan los valores de x e y obtenidos por el algoritmo de descenso por gradiente en cada iteración. Luego, se genera una condición inicial aleatoria en dos dimensiones y se llama a la función "gradient_descent" con los parámetros necesarios para aplicar el algoritmo de descenso por gradiente y almacenar los resultados en la variable "xs_2d". Finalmente, se llama a la función "plot_rosenbrock_2d" con la variable "xs_2d" como entrada para visualizar los resultados.
+
 
 ### 2.1. **Definición del algoritmo de hormigas**
 test
