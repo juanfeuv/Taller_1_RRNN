@@ -173,6 +173,7 @@ Luego se define la clase Swarm que tiene los siguientes atributos: n_particles (
 La clase Swarm tiene un método update(func) que actualiza la posición y velocidad de cada partícula y actualiza las mejores posiciones y valores de la función tanto para cada partícula como para todo el enjambre.
 
 La función test_pso_3D(func) crea un enjambre de partículas y actualiza sus posiciones y velocidades por 50 iteraciones. Retorna una lista con las posiciones de todas las partículas en cada iteración, la mejor posición global y el mejor valor de la función global. En esta parte tendremos como resultado una función qué recibe ambas funciones y las optimiza.
+
 ![image](ros3dEnjPart.gif)
 ![image](ras3dEnjPart.gif)
 
