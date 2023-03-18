@@ -201,9 +201,15 @@ test
 test
 
 ## 4. **Conclusiones**
-Conclusión
+Se analizaron las posibles rutas más óptimas a partir del algoritmo de optimización de hormigas para 1 y 150 hormigas y se evidencia que la ruta óptima es la misma.
+Se encuentra que la ruta optimza es:
+gif_viajero.gif
 
 ## **Referencias:**
 
 planteamiento para el enfoque de los datos: https://www.cbsnews.com/news/the-biggest-problems-with-americas-colleges/
+- Peajes en Colombia: https://www.peajesencolombia.com/
+- Algoritmo de optmización de hormigas: https://github.com/Akavall/AntColonyOptimization/blob/c585c5cfc9b0e6b709322ac15fe1e2193b20d8e4/ant_colony.py
+- Consumo de carro: https://www.elcarrocolombiano.com/pruebas/mazda-cx-5-signature-a-prueba-un-suv-con-turbo-y-mucho-picante-video/#:~:text=En%20cuanto%20al%20consumo%2C%20est%C3%A1,58%20km%2Fgal%C3%B3n%20en%20carretera
+- Valor hora vendedor: https://co.talent.com/salary?job=vendedor
 
