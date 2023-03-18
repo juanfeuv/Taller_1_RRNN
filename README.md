@@ -37,6 +37,55 @@ Las 15 ciudades son:
 Para el desarrollo del objetivo planteado (optimizar las rutas) se utilizará el método colonias de hormigas y algoritmos genéticos.
 
 ## 2. **Desarrollo técnico**
+### 2.1. **Definición del algoritmo de hormigas**
+Deacuerdo al algoritmo de optimización hormigas se realiza la definición del algoritmo en python que se utilizará en conjunto con las rutas a optmizar.
+https://github.com/Akavall/AntColonyOptimization/blob/c585c5cfc9b0e6b709322ac15fe1e2193b20d8e4/ant_colony.py
+
+### 2.2. **Preparación de los datos**
+Para preparar los datos de las rutas se siguen los pasos de identificación de peajes, identificación de distancias de las rutas y coordenadas y calculo de de costo de viajes
+
+#### 2.2.1 **Identificación de peajes**
+Para la identificación de peajes usamos la página https://www.peajesencolombia.com/ de la cual buscaron todos los peajes entre los destinos posibles
+![image](https://user-images.githubusercontent.com/45887686/226084864-4b1cfd60-7c04-41a9-a134-ed95109b2b10.png)
+
+Una vez obtenidos los peajes importaron y se procesaron para tenerlos en un dataset de peajes
+#### 2.2.2 **Identificación de distancias de las rutas y coordenadas**
+Para la obtención de rutas y coordenadas se utilizó una librería que nos permitió obtener las distancias de las rutas en tiempo real: openrouteservice
+Para obtener la distancia de cada combinación posible de rutas se realizó una consulta por API utilizando los nombres de las ciudades especificando departamento, ya que podrían a llegar a existir ciudades homónimas
+
+`"Palmira, Valle del cauca, Colombia", 
+    "Pasto, Nariño, Colombia", "Tulua, Valle del cauca, Colombia", 
+    "Bogota, Colombia", "Pereira, Risaralda, Colombia", 
+    "Armenia, Quindio, Colombia",
+    "Manizales, Caldas, Colombia", "Valledupar, Cesar, Colombia",
+    "Monteria, Cordoba, Colombia", "Soledad, Atlantico, Colombia",
+    "Cartagena, Bolivar, Colombia", "Barranquilla, Atlantico, Colombia" ,
+    "Medellin, Antioquia, Colombia", "Bucaramanga, Santander, Colombia", 
+    "Cucuta, Norte de Santander, Colombia"`
+
+#### 2.2.3 **Calculo de de costo de viajes**
+Una vez con las distancias de todas las combinaciones, se procede a obtener a calcular el costo de cada ruta deacuerdo al valor de la gasolina: $10.766/galón teniendo encuenta un consumo promedio de 58 kms/galón. El consumo se toma de un vehiculo mazda cx-5: https://www.elcarrocolombiano.com/pruebas/mazda-cx-5-signature-a-prueba-un-suv-con-turbo-y-mucho-picante-video/#:~:text=En%20cuanto%20al%20consumo%2C%20est%C3%A1,58%20km%2Fgal%C3%B3n%20en%20carretera
+
+viaje_por_galon = 58 * 1000
+precio_gasolina = 10766
+precio_peaje = se mapea dependiendo de cada ruta
+
+Adicionalment se calcula la cantidad de horas de viaje para tener en cuenta el costo por hora del vendedor: cantidad_horas_viaje = distancia / VELOCIDAD_MAXIMA, donde velocidad maxima es de 80km/hora
+El costo del tiempo del empleado es costo_vendedor = cantidad_horas_viaje * SALARIO_VENDEDOR, donde el salario del vendedor por hora es $7.690
+
+Para obtener el precio de cada ruta se ejecuta la formula ((distancia_ruta / viaje_por_galon) * precio_gasolina) + precio_peaje + costo_vendedor
+
+### 2.3. **Optimización de datos bajo algoritmo de hormigas**
+Para obtimizar la mejor ruta se toma los costos de las rutas totales obtenidas y se guardan en una matriz que es recibida por la función de obtimización.
+Para lo anterior se probaron dos casos para validar el resultado optimo uno con número de hormigas igual a 1 y otro igual a 150
+
+Adicionalmente se enviaron los parámetros:
+- n_best: 150
+- n_iterations: 1000
+- decay: 0.95
+- alpha: 1
+- beta: 1
+
 ### 2.1. **Definición de funciones Rosenbrock**
 “La función de Rosenbrock es una conocida función de prueba para problemas de optimización numérica, el cual fue inicialmente usado por De Jong para probar el desempeño de algoritmos genéticos”(Yun-Wei Shang, 2006). La implementación de la función de Rosenbrock en 2D y 3D se realiza mediante las funciones "rosenbrock_2d" (1-x)2+100*(y-x2)2 y "rosenbrock_3d" (1-x)2+100*(y-x2)2+(1-y)2+100*(z-y2)2, respectivamente. 
 
