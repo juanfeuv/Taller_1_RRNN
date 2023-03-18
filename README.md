@@ -37,19 +37,19 @@ Las 15 ciudades son:
 Para el desarrollo del objetivo planteado (optimizar las rutas) se utilizará el método colonias de hormigas y algoritmos genéticos.
 
 ## 2. **Desarrollo técnico**
-### 2.1. **Definición del algoritmo de hormigas**
+### 2.1.1. **Definición del algoritmo de hormigas**
 Deacuerdo al algoritmo de optimización hormigas se realiza la definición del algoritmo en python que se utilizará en conjunto con las rutas a optmizar.
 https://github.com/Akavall/AntColonyOptimization/blob/c585c5cfc9b0e6b709322ac15fe1e2193b20d8e4/ant_colony.py
 
-### 2.2. **Preparación de los datos**
+### 2.1.2. **Preparación de los datos**
 Para preparar los datos de las rutas se siguen los pasos de identificación de peajes, identificación de distancias de las rutas y coordenadas y calculo de de costo de viajes
 
-#### 2.2.1 **Identificación de peajes**
+#### 2.1.3. **Identificación de peajes**
 Para la identificación de peajes usamos la página https://www.peajesencolombia.com/ de la cual buscaron todos los peajes entre los destinos posibles
 ![image](https://user-images.githubusercontent.com/45887686/226084864-4b1cfd60-7c04-41a9-a134-ed95109b2b10.png)
 
 Una vez obtenidos los peajes importaron y se procesaron para tenerlos en un dataset de peajes
-#### 2.2.2 **Identificación de distancias de las rutas y coordenadas**
+#### 2.1.4 **Identificación de distancias de las rutas y coordenadas**
 Para la obtención de rutas y coordenadas se utilizó una librería que nos permitió obtener las distancias de las rutas en tiempo real: openrouteservice
 Para obtener la distancia de cada combinación posible de rutas se realizó una consulta por API utilizando los nombres de las ciudades especificando departamento, ya que podrían a llegar a existir ciudades homónimas
 
@@ -63,7 +63,7 @@ Para obtener la distancia de cada combinación posible de rutas se realizó una 
     "Medellin, Antioquia, Colombia", "Bucaramanga, Santander, Colombia", 
     "Cucuta, Norte de Santander, Colombia"`
 
-#### 2.2.3 **Calculo de de costo de viajes**
+#### 2.1.5. **Calculo de de costo de viajes**
 Una vez con las distancias de todas las combinaciones, se procede a obtener a calcular el costo de cada ruta deacuerdo al valor de la gasolina: $10.766/galón teniendo encuenta un consumo promedio de 58 kms/galón. El consumo se toma de un vehiculo mazda cx-5: https://www.elcarrocolombiano.com/pruebas/mazda-cx-5-signature-a-prueba-un-suv-con-turbo-y-mucho-picante-video/#:~:text=En%20cuanto%20al%20consumo%2C%20est%C3%A1,58%20km%2Fgal%C3%B3n%20en%20carretera
 
 viaje_por_galon = 58 * 1000
@@ -75,7 +75,7 @@ El costo del tiempo del empleado es costo_vendedor = cantidad_horas_viaje * SALA
 
 Para obtener el precio de cada ruta se ejecuta la formula ((distancia_ruta / viaje_por_galon) * precio_gasolina) + precio_peaje + costo_vendedor
 
-### 2.3. **Optimización de datos bajo algoritmo de hormigas**
+### 2.1.6. **Optimización de datos bajo algoritmo de hormigas**
 Para obtimizar la mejor ruta se toma los costos de las rutas totales obtenidas y se guardan en una matriz que es recibida por la función de obtimización.
 Para lo anterior se probaron dos casos para validar el resultado optimo uno con número de hormigas igual a 1 y otro igual a 150
 
@@ -204,6 +204,8 @@ test
 Se analizaron las posibles rutas más óptimas a partir del algoritmo de optimización de hormigas para 1 y 150 hormigas y se evidencia que la ruta óptima es la misma.
 Se encuentra que la ruta optimza es:
 ![image](gif_viajero.gif)
+En general se mostró que el algoritmo genético, puede ser mejor para optimización, dado que éste converge más rápido que los otros algoritmos, tanto en la función de Rosenbrock como en la de Rastrigin, y además se puede apreciar que el algoritmo genético converge en un mínimo global, mientras que el Gradiente puede converger a distintos locales.
+La función Rastrigin es una buena función para poder probar algoritmos de optimización y ver cuales algoritmos funcionan para llegar a un mínimo global y cuales funcionan para llegar a mínimos locales.
 
 ## **Referencias:**
 
