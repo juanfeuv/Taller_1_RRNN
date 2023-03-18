@@ -142,7 +142,7 @@ cr: tasa de cruce para la operación de recombinación.
 Luego, se llama a la función differential_evolution con estos parámetros y con la función objetivo que se quiere optimizar, en este caso rast2. La solución devuelta por la función es una lista que contiene el vector de solución óptimo, el valor de la función objetivo en ese punto, una lista de los valores de la función objetivo en cada iteración y una lista de los puntos de solución en cada iteración.
 
 Finalmente, se crea un gráfico que muestra las curvas de nivel de la función de Rastrigin en dos dimensiones, junto con una línea que muestra cómo la mejor solución encontrada por el algoritmo mejora a lo largo de las iteraciones. En el gráfico se puede ver cómo la solución converge lentamente hacia el mínimo global de la función.
-![image](ras2dEvDif.gif)
+![image](rast2dEvDif.gif)
 
 ### 2.2.8. **Definición la optimización por metodo evolución diferencia para la función de Rastrigin en tres dimensiones**
 Para optimizar la ecuaciones de Rastrigin en tres dimensiones con evolución diferencial (rast3). El proceso es similar al código anterior, pero en este caso se utiliza un conjunto de límites (-5.12 a 5.12) para las 3 dimensiones de la función.
@@ -150,7 +150,7 @@ Para optimizar la ecuaciones de Rastrigin en tres dimensiones con evolución dif
 Primero se define el tamaño de la población (pop_size), los límites para cada dimensión (bounds), el número de iteraciones (iter), el factor de escala para la mutación (F) y la tasa de cruce para la recombinación (cr). Luego se utiliza la función differential_evolution para encontrar la solución óptima de la función rast3.
 
 Después, se crea una malla de puntos para evaluar la función en 3D y se grafica la superficie resultante con el comando ax.plot_surface. Finalmente, se plotea la trayectoria seguida por el algoritmo para encontrar la solución óptima, utilizando las coordenadas obtenidas en la variable solution3d[3] (x,y,z). El resultado es una visualización en 3D de la función Rastrigin y la trayectoria seguida por el algoritmo para encontrar el mínimo global.
-![image](ras3dEvDif.gif)
+![image](rast3dEvDif.gif)
 
 ### 2.2.9. **Definición la optimización por metodo de enjambre de particulas para ambas funciones de Rastrigin en dos dimensiones**
 Ahora implementamos el código de algoritmo de Optimización por Enjambre de Partículas (PSO) para encontrar el mínimo global de una función en 2D .
