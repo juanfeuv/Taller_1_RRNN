@@ -97,12 +97,13 @@ La implementación de la función de Rastrigin en 2D y 3D se realiza mediante la
 El método de descenso por gradiente se implementa mediante la función "gradient_descent". Este método es una técnica de optimización iterativa que se utiliza para encontrar el mínimo de una función mediante la actualización de los valores de los parámetros en la dirección opuesta del gradiente de la función. En cada iteración, se calcula el gradiente de la función en el punto actual y se actualiza el valor de los parámetros multiplicándose por la tasa de aprendizaje. El proceso se repite hasta que se alcance una tolerancia determinada o se llegue a un número máximo de iteraciones.
 
 En el código se genera una visualización en 2D de la función de Rosenbrock y la trayectoria de búsqueda del algoritmo de descenso por gradiente. Primero se define la función "plot_rosenbrock_2d" que toma como entrada un arreglo de puntos que representan los valores de x e y obtenidos por el algoritmo de descenso por gradiente en cada iteración. Luego, se genera una condición inicial aleatoria en dos dimensiones y se llama a la función "gradient_descent" con los parámetros necesarios para aplicar el algoritmo de descenso por gradiente y almacenar los resultados en la variable "xs_2d". Finalmente, se llama a la función "plot_rosenbrock_2d" con la variable "xs_2d" como entrada para visualizar los resultados.
-![image](ras2dAlGen.gif)
+![image](ros2dgrad.gif)
 
 ### 2.2.4. **Definición la optimización por metodo gradiente para la función de Rosenbrock**
 En el código se genera una visualización en 2D de la función de Rastrigin y la trayectoria de búsqueda del algoritmo de descenso por gradiente. Primero se define la función "plot_rastrigin_3d" que toma como entrada un arreglo de puntos que representan los valores de x e y obtenidos por el algoritmo de descenso por gradiente en cada iteración y el valor de z obtenido de la función “rastrigin_2d”. Luego, se genera una condición inicial aleatoria en tres dimensiones y se llama a la función "gradient_descent" con los parámetros necesarios para aplicar el algoritmo de descenso por gradiente y almacenar los resultados en la variable "xs_3d".
 
 Finalmente, se llama a la función "plot_rastrigin_3d" con la variable "xs_3d" como entrada para visualizar los resultados.
+![image](ras2dgrad.gif)
 
 ### 2.2.5. **Definición la optimización por metodo evolución diferencia para la función de Rosenbrock en dos dimensiones**
 La función de objetivo a minimizar se define en el código a través de la función "obj" que se pasa como parámetro en la función "differential_evolution".
@@ -116,6 +117,7 @@ La función "differential_evolution" es la función principal del algoritmo y to
 Ahora implementamos la optimización de la función de Rosenbrock en dos dimensiones utilizando el algoritmo de diferencias evolutivas (DE). Primero, se define el tamaño de la población (pop_size), los límites inferior y superior para cada dimensión (bounds), el número de iteraciones (iter), el factor de escala para la mutación (F) y la tasa de recombinación cruzada (cr). Luego, se llama a la función differential_evolution() con estos parámetros, junto con la función de Rosenbrock en dos dimensiones (rosen2) como la función objetivo.
 
 Después de ejecutar el algoritmo DE, se crea una malla de puntos en el rango de -5.12 a 5.12 para evaluar la función de Rosenbrock en dos dimensiones y se dibuja su contorno en un plano bidimensional. Luego, se extraen las coordenadas x e y de la mejor solución encontrada (solution[3]) y se dibuja una línea roja que conecta estos puntos en el plano del contorno. Finalmente, se muestra el gráfico con la mejor solución encontrada en rojo y las curvas de contorno de la función objetivo de Rosenbrock en el fondo.
+![image](ros2dEvDif.gif)
 
 ### 2.2.6. **Definición la optimización por metodo evolución diferencia para la función de Rosenbrock en tres dimensiones**
 Para optimizar la ecuaciones de Rosenbrock en tres dimensiones con evolución diferencial. Primero se definen los parámetros necesarios para ejecutar el algoritmo, incluyendo el tamaño de la población, los límites inferior y superior de cada dimensión, el número de iteraciones, el factor de escala para la mutación y la tasa de cruce para la recombinación.
@@ -125,28 +127,28 @@ Luego, se llama a la función differential_evolution con estos parámetros y la 
 A continuación, se crea una malla de puntos en el rango de -5.12 a 5.12 para las dimensiones x e y, y se evalúa la función objetivo en cada punto de la malla para crear una superficie tridimensional. Luego, se extraen las coordenadas x, y, y z de la mejor solución encontrada y se plotea esta solución en rojo en la superficie tridimensional.
 
 Finalmente, se muestra la figura con las gráficas utilizando la función plt.show().
+![image](ros3dEvDif.gif)
 
 ### 2.2.7. **Definición la optimización por metodo evolución diferencia para la función de Rastrigin en dos dimensiones**
-La función de objetivo a minimizar se define en el código a través de la función "obj" que se pasa como parámetro en la función "differential_evolution".
+Para optimizar la ecuaciones de Rastrigin en dos dimensiones con evolución diferencial. Primero, se definen los parámetros necesarios para la función differential_evolution:
 
-El algoritmo Evolución Diferencial utiliza una población de vectores, cada uno de los cuales representa una posible solución. En cada iteración, el algoritmo selecciona tres vectores aleatorios de la población y realiza una operación de mutación para generar un nuevo vector de prueba. A continuación, se realiza una operación de cruce entre el vector de prueba y un vector objetivo seleccionado al azar. Si el vector de prueba es mejor que el vector objetivo, el vector objetivo se reemplaza por el vector de prueba en la población. Este proceso se repite durante varias iteraciones hasta que se alcanza un criterio de parada, que suele ser un número máximo de iteraciones o una tolerancia en la mejora de la función objetivo.
+pop_size: tamaño de la población de soluciones candidatas.
+bounds: límites inferior y superior para cada dimensión del espacio de búsqueda.
+iter: número de iteraciones del algoritmo.
+F: factor de escala para la operación de mutación.
+cr: tasa de cruce para la operación de recombinación.
+Luego, se llama a la función differential_evolution con estos parámetros y con la función objetivo que se quiere optimizar, en este caso rast2. La solución devuelta por la función es una lista que contiene el vector de solución óptimo, el valor de la función objetivo en ese punto, una lista de los valores de la función objetivo en cada iteración y una lista de los puntos de solución en cada iteración.
 
-El código implementa varias funciones auxiliares que se utilizan en el algoritmo DE, incluyendo una función de mutación, una función de cruce, una función de selección, una función de comprobación de límites y una función para generar la población inicial aleatoria.
-
-La función "differential_evolution" es la función principal del algoritmo y toma como parámetros el tamaño de la población, los límites de las variables de la función objetivo, el número máximo de iteraciones, el factor de escala F y la tasa de cruce cr. Retorna una lista que contiene el mejor vector encontrado, el valor de la función objetivo en ese vector, una lista que contiene los valores de la función objetivo en cada iteración y una lista que contiene los mejores vectores encontrados en cada iteración.
-
-Ahora implementamos la optimización de la función de Rosenbrock en dos dimensiones utilizando el algoritmo de diferencias evolutivas (DE). Primero, se define el tamaño de la población (pop_size), los límites inferior y superior para cada dimensión (bounds), el número de iteraciones (iter), el factor de escala para la mutación (F) y la tasa de recombinación cruzada (cr). Luego, se llama a la función differential_evolution() con estos parámetros, junto con la función de Rosenbrock en dos dimensiones (rosen2) como la función objetivo.
-
-Después de ejecutar el algoritmo DE, se crea una malla de puntos en el rango de -5.12 a 5.12 para evaluar la función de Rosenbrock en dos dimensiones y se dibuja su contorno en un plano bidimensional. Luego, se extraen las coordenadas x e y de la mejor solución encontrada (solution[3]) y se dibuja una línea roja que conecta estos puntos en el plano del contorno. Finalmente, se muestra el gráfico con la mejor solución encontrada en rojo y las curvas de contorno de la función objetivo de Rosenbrock en el fondo.
+Finalmente, se crea un gráfico que muestra las curvas de nivel de la función de Rastrigin en dos dimensiones, junto con una línea que muestra cómo la mejor solución encontrada por el algoritmo mejora a lo largo de las iteraciones. En el gráfico se puede ver cómo la solución converge lentamente hacia el mínimo global de la función.
+![image](ras2dEvDif.gif)
 
 ### 2.2.8. **Definición la optimización por metodo evolución diferencia para la función de Rastrigin en tres dimensiones**
-Para optimizar la ecuaciones de Rosenbrock en tres dimensiones con evolución diferencial. Primero se definen los parámetros necesarios para ejecutar el algoritmo, incluyendo el tamaño de la población, los límites inferior y superior de cada dimensión, el número de iteraciones, el factor de escala para la mutación y la tasa de cruce para la recombinación.
+Para optimizar la ecuaciones de Rastrigin en tres dimensiones con evolución diferencial (rast3). El proceso es similar al código anterior, pero en este caso se utiliza un conjunto de límites (-5.12 a 5.12) para las 3 dimensiones de la función.
 
-Luego, se llama a la función differential_evolution con estos parámetros y la función objetivo rosen3, que es la versión tridimensional de la función de Rosenbrock. La función devuelve una tupla que contiene la mejor solución encontrada, el valor de la función objetivo para esa solución, el número de evaluaciones de la función objetivo realizadas y una lista de todas las soluciones generadas durante la búsqueda.
+Primero se define el tamaño de la población (pop_size), los límites para cada dimensión (bounds), el número de iteraciones (iter), el factor de escala para la mutación (F) y la tasa de cruce para la recombinación (cr). Luego se utiliza la función differential_evolution para encontrar la solución óptima de la función rast3.
 
-A continuación, se crea una malla de puntos en el rango de -5.12 a 5.12 para las dimensiones x e y, y se evalúa la función objetivo en cada punto de la malla para crear una superficie tridimensional. Luego, se extraen las coordenadas x, y, y z de la mejor solución encontrada y se plotea esta solución en rojo en la superficie tridimensional. 
-
-Finalmente, se muestra la figura con las gráficas utilizando la función plt.show().
+Después, se crea una malla de puntos para evaluar la función en 3D y se grafica la superficie resultante con el comando ax.plot_surface. Finalmente, se plotea la trayectoria seguida por el algoritmo para encontrar la solución óptima, utilizando las coordenadas obtenidas en la variable solution3d[3] (x,y,z). El resultado es una visualización en 3D de la función Rastrigin y la trayectoria seguida por el algoritmo para encontrar el mínimo global.
+![image](ras3dEvDif.gif)
 
 ### 2.2.9. **Definición la optimización por metodo de enjambre de particulas para ambas funciones de Rastrigin en dos dimensiones**
 Ahora implementamos el código de algoritmo de Optimización por Enjambre de Partículas (PSO) para encontrar el mínimo global de una función en 2D .
@@ -156,6 +158,8 @@ La clase Particle define las partículas que componen el enjambre. Cada partícu
 La clase Swarm es el enjambre en sí mismo, que consta de un número de partículas. La función update se encarga de actualizar la posición y velocidad de cada partícula en función de su mejor posición encontrada hasta ahora y de la mejor posición encontrada por todo el enjambre. También se actualiza la función de aptitud de cada partícula y se actualizan los valores de la mejor posición y valor de aptitud encontrados hasta ahora por el enjambre.
 
 La función test_pso es un ejemplo de cómo se puede utilizar esta implementación para encontrar el mínimo global de una función. Se crea un enjambre de 20 partículas y se actualiza durante 50 iteraciones. La función devuelve una lista de todas las posiciones que ha tomado cada partícula en cada iteración, la mejor posición encontrada por el enjambre y el valor de aptitud correspondiente a esa posición. En esta parte tendremos como resultado una función qué recibe ambas funciones y las optimiza.
+![image](ros2dEnjPart.gif)
+![image](ras2dEnjPart.gif)
 
 ### 2.2.10. **Definición la optimización por metodo de enjambre de particulas para ambas funciones de Rastrigin en tres dimensiones**
 Ahora implementamos el código de algoritmo de Optimización por Enjambre de Partículas (PSO) para encontrar el mínimo global de una función en 3D.
@@ -167,6 +171,8 @@ Luego se define la clase Swarm que tiene los siguientes atributos: n_particles (
 La clase Swarm tiene un método update(func) que actualiza la posición y velocidad de cada partícula y actualiza las mejores posiciones y valores de la función tanto para cada partícula como para todo el enjambre.
 
 La función test_pso_3D(func) crea un enjambre de partículas y actualiza sus posiciones y velocidades por 50 iteraciones. Retorna una lista con las posiciones de todas las partículas en cada iteración, la mejor posición global y el mejor valor de la función global. En esta parte tendremos como resultado una función qué recibe ambas funciones y las optimiza.
+![image](ros3dEnjPart.gif)
+![image](ras3dEnjPart.gif)
 
 ### 2.2.11. **Definición la optimización por metodo de de algoritmo genético para ambas funciones de Rastrigin en dos dimensiones**
 Implementamos el código de un algoritmo genético para encontrar el mínimo global de una función en dos variables.
@@ -176,6 +182,8 @@ La función selection realiza la selección de los mejores individuos de la pobl
 La función crossover realiza la cruza entre dos padres, calculando el promedio de sus valores de x e y para generar un hijo.
 La función mutation realiza la mutación de un individuo, con una cierta tasa de mutación dada por rate. Si un número aleatorio es menor que la tasa de mutación, se agrega un valor aleatorio pequeño a los valores de x e y. Luego, se recalcula el valor de fitness.
 La función genetic_algorithm implementa el algoritmo genético en sí. Comienza generando la población inicial, luego itera sobre un número dado de generaciones. En cada generación, se realiza la selección, cruza y mutación de la población para generar la próxima generación. También se realiza un seguimiento del mejor individuo de la población en cada generación y se guarda su posición y valor de fitness en la lista solutions. Al final, se devuelve esta lista de soluciones. En esta parte tendremos como resultado una función qué recibe ambas funciones y las optimiza.
+![image](ros2dAlGen.gif)
+![image](ras2dAlGen.gif)
 
 ### 2.2.12. **Definición la optimización por metodo de de algoritmo genético para ambas funciones de Rastrigin en tres dimensiones**
 Usaremos un código para implementar un algoritmo genético para encontrar el mínimo global de una función de tres variables en un espacio tridimensional. El código es similar al de un algoritmo genético para dos variables que discutimos anteriormente, pero se ha extendido para manejar tres variables.
@@ -188,6 +196,8 @@ El proceso de selección, cruce y mutación se repite durante un número especif
 Finalmente, el algoritmo devuelve una lista de soluciones que contienen las coordenadas de cada mejor solución encontrada en cada generación, junto con su valor de fitness correspondiente.
 
 El código es útil para encontrar el mínimo global de una función de tres variables, y se puede modificar para adaptarse a funciones con cualquier número de variables. En esta parte tendremos como resultado una función qué recibe ambas funciones y las optimiza.
+![image](ros3dAlGen.gif)
+![image](ras3dAlGen.gif)
 
 
 ## 4. **Conclusiones**
