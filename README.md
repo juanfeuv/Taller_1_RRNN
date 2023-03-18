@@ -13,9 +13,7 @@ El siguiente reporte técnico trata sobre optimizaciones en dos funciones matema
 
 ”El método de descenso por gradiente es un algoritmo iterativo usado a menudo en problemas de optimización para encontrar el mínimo local de una función de costo arbitrario”(Sever, 2023). Los algoritmos evolutivos, la optimización de partículas y la evolución diferencial son otros métodos populares de optimización que utilizan conceptos como la selección natural y la simulación de comportamientos de grupo de partículas para encontrar el mínimo global.
 
-El objetivo de este trabajo es comparar el rendimiento de estos diferentes métodos de optimización en la resolución de los problemas de optimización de las funciones de Rosenbrock y Rastrigin. Para ello, se pueden utilizar técnicas de programación para implementar cada uno de los métodos de optimización y analizar su rendimiento en términos de velocidad de convergencia, precisión de la solución y capacidad para encontrar el mínimo global.
-
-En resumen, este trabajo tiene como objetivo evaluar y comparar el rendimiento de diferentes algoritmos de optimización en la resolución de los problemas de optimización de las funciones de Rosenbrock y Rastrigin, con el fin de identificar cuál de estos métodos es más eficiente y efectivo para resolver estos problemas de optimización comunes.
+El objetivo de la primera parte de este trabajo es comparar el rendimiento de estos diferentes métodos de optimización en la resolución de los problemas de optimización de las funciones de Rosenbrock y Rastrigin. Para ello, se pueden utilizar técnicas de programación para implementar cada uno de los métodos de optimización y analizar su rendimiento en términos de velocidad de convergencia, precisión de la solución y capacidad para encontrar el mínimo global.
 
 Y tambien trata acerca de la optimización de recorridos entre diferentes ciudades de Colombia en un carro. Un vendedor desea dirigirse a 15 ciudades sin importar el orden del itinerario, es decir, no importa si va a una ciudad antes que otra, lo que importa es que el recorrido sea lo mas económico posible en terminos de dinero.
 
